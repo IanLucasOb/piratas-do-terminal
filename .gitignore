@@ -1,3 +1,6 @@
 .settings
 *.class
 .classpath
+/.metadata/
+.project
+/src/module-info.java
