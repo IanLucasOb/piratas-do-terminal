@@ -3,36 +3,34 @@ package Scripts.Player;
 import Scripts.Item.Item;
 
 public class Player {
-	
+
 	/*
-	 *  PROPRIEDADES
+	 * PROPRIEDADES
 	 */
 	private String nome;
-	
+
 	private int vida;
 	private int maxVida;
 
-	private double ataque;
-	
+	private Item itemEquipado;
+
 	private Item[] inventario;
-	
+
 	/*
 	 * CONSTRUTOR
 	 */
-	public Player(int maxVida, int ataque)
-	{
+	public Player(String nome, int maxVida) {
 		this.vida = maxVida;
 		this.vida = maxVida;
-		this.ataque = ataque;
+		this.nome = nome;
 	}
-	
+
 	/*
 	 * MÉTODOS
 	 */
-	
-		
+
 	/*
-	 *  GETTERS E SETTERS
+	 * GETTERS E SETTERS
 	 */
 	public String getNome() {
 		return nome;
@@ -58,12 +56,12 @@ public class Player {
 		this.maxVida = maxVida;
 	}
 
-	public double getAtaque() {
-		return ataque;
+	public Item getItemEquipado() {
+		return itemEquipado;
 	}
 
-	public void setAtaque(double ataque) {
-		this.ataque = ataque;
+	public void setItemEquipado(Item itemEquipado) {
+		this.itemEquipado = itemEquipado;
 	}
 
 	public Item[] getInventario() {
