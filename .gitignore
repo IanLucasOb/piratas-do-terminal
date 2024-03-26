@@ -4,4 +4,4 @@
 /.metadata/
 .project
 /src/module-info.java
-.txt
+*.txt
