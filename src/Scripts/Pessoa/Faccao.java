@@ -1,15 +1,13 @@
 package Scripts.Pessoa;
 
-public class Faccao extends Player{
+public class Faccao {
     private String tipo;
     private double bonusAdicional;
-
 
     /*
      * CONSTRUTOR
      */
-    public Faccao(String nome, String ilhaNatal, int vida, int maxVida, String tipo, double bonusAdicional) {
-        super(nome, ilhaNatal, vida, maxVida);
+    public Faccao(String tipo, double bonusAdicional) {
         this.tipo = tipo;
         this.bonusAdicional = bonusAdicional;
     }
