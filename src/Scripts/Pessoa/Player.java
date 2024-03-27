@@ -10,12 +10,16 @@ public class Player extends Pessoa {
 	 */
 	private Item itemEquipado;
 	private Item[] inventario;
+
 	private Atributo[] atributos; // 8 Atributos
 	private Atributo atributoPrincipal; 
+
 	private int nivel; 
 	private Bando bandoAssociado; 
+
 	private double pesoAtual; // falta
 	private double pesoMax; // falta
+
 	private Faccao classePlayer; // falta
 
 	/*
@@ -34,6 +38,31 @@ public class Player extends Pessoa {
 		/*
 	 * MÉTODOS
 	 */
+	public String usar(Item item) {
+		return "teste";
+	}
+
+
+	public String largar(Item item) {
+		return "teste";
+	}
+
+
+	public String atacar() {
+		return "teste";
+	}
+
+
+	public String defender() {
+		return "teste";
+	}
+
+
+	public String esquivar() {
+		return "teste";
+	}
+
+
 
 	/*
 	 * GETTERS E SETTERS
