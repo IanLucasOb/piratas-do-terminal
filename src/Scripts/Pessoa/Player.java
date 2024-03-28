@@ -35,7 +35,7 @@ public class Player extends Pessoa {
 		this.classePlayer = classePlayer;
 	}
 
-		/*
+	/*
 	 * MÉTODOS
 	 */
 	public String usar(Item item) {

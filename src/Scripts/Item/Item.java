@@ -23,6 +23,28 @@ public class Item {
 	/*
 	 * CONSTRUTOR
 	 */
+	public Item(String id, String nome, int quantidade, boolean estacavel, int quantMax, float durabilidadeMax) {
+		this.id = id;
+		this.nome = nome;
+		
+		this.quantidade = quantidade;
+
+		this.estacavel = estacavel;
+		if (!estacavel)
+		{
+			this.quantMax = 1;
+		}
+		else
+		{
+			this.quantMax = quantMax;
+		}
+
+		this.durabilidadeMax = durabilidadeMax;
+		this.GerarDurabilidade(false);
+
+	}
+
+	// Construtor simplificado
 	public Item(String id, String nome, int quantidade) {
 		this.id = id;
 		this.nome = nome;
@@ -33,8 +55,17 @@ public class Item {
 	/*
 	 * MÉTODOS
 	 */
-
-
+	private void GerarDurabilidade(boolean random)
+	{
+		if (!random)
+		{
+			this.durabilidadeAtual = this.durabilidadeMax;
+		}
+		else
+		{
+			// GERAR ALEATORIAMENTE UM VALOR DE DURABILIDADE
+		}
+	}
 	
 	/*
 	 * GETTERS E SETTERS
