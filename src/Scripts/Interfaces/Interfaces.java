@@ -2,27 +2,44 @@ package Scripts.Interfaces;
 
 
 public class Interfaces {
-    private boolean batalha;
-    private boolean dialogo;
-    private boolean navegando;
-    private boolean explorando;
+    private boolean batalha = false;
+    private boolean dialogo = false;
+    private boolean navegando = false;
+    private boolean explorando = false;
 
 
     /*
      * CONSTRUTOR
      */
-    public Interfaces(boolean batalha, boolean dialogo, boolean navegando, boolean explorando) {
-        this.batalha = batalha;
-        this.dialogo = dialogo;
-        this.navegando = navegando; 
-        this.explorando = explorando;
+    public Interfaces() {
+        this.menu();
     }
 
     /*
      * MÉTODOS
      */
     public void linha() {
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+    }
+
+    public void menu() {
+        this.linha();
+        System.out.println("                         Menu");
+        this.linha();
+        System.out.println(   "  [ 0 ] - Sair" 
+                            + "\n  [ 1 ] - Jogar"
+                            + "\n  [ 2 ] - Opções"
+                            + "\n  [ 3 ] - Créditos");
+        this.linha();
+    }
+
+    public void creditos() {
+        System.out.println(   "Créditos: "
+                            + "\n            Ian Lucas Oliveira Bastos"
+                            + "\n         João Augusto Tolentino Santana"
+                            + "\n              Thiago Holz Coutinho"
+                            + "\n                                             © ILUSES 2024");
+        this.linha();
     }
 
     /*
