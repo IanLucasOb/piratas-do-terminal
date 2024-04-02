@@ -1,8 +1,11 @@
 package Scripts.Pessoa;
 
 import Scripts.Item.*;
+import Scripts.ListaSimples.*;
+import Scripts.ListaSimples.ListaSimples;
+import Scripts.Ataque.*;
 import Scripts.Atributo.*;
-import Scripts.Bando.*;
+
 
 public class Player extends Pessoa {
 	/*
@@ -21,18 +24,25 @@ public class Player extends Pessoa {
 	private double pesoMax; // falta
 
 	private Faccao classePlayer; // falta
+	private ListaSimples listaAtaques;
 
 	/*
 	 * CONSTRUTOR
 	 */
-	public Player(String nome, String ilhaNatal, int vida, int maxVida, Faccao classePlayer, String nomeBando, String nomeAtributoPrincipal) {
-		super(nome, ilhaNatal, vida, maxVida);
+	public Player(String nome, String ilhaNatal, int maxVida, Faccao classePlayer, String nomeBando, String nomeAtributoPrincipal) {
+		super(nome, ilhaNatal, maxVida);
+		
 		this.inventario = new Item[5];
 		this.nivel = 0;
-		this.bandoAssociado.setNomeBando(nomeBando);
+		
+		this.bandoAssociado = new Bando(nomeBando, 1, null);
 		this.atributos = new Atributo[8];
-		this.atributoPrincipal.setNome(nomeAtributoPrincipal);
+		
+		this.atributoPrincipal = new Atributo(nomeAtributoPrincipal);
 		this.classePlayer = classePlayer;
+
+		this.listaAtaques = new ListaSimples();
+		this.listaAtaques.inserirUltimo(new Dado(new Ataque("Ataque Simples", 1, new Atributo("Dano"))));
 	}
 
 	/*
@@ -136,5 +146,13 @@ public class Player extends Pessoa {
 	}
 	public void setClassePlayer(Faccao classePlayer) {
 		this.classePlayer = classePlayer;
+	}
+
+
+	public ListaSimples getListaAtaques() {
+		return listaAtaques;
+	}
+	public void setListaAtaques(Dado elem) {
+		this.listaAtaques.inserirUltimo(elem);
 	}
 }

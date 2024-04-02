@@ -9,6 +9,12 @@ public class Atributo {
     /* 
      * CONSTRUTOR
      */
+    public Atributo(String nome) {
+        this.nome = nome;
+        this.porcetnBonus = 0;
+        this.nivel = 1;
+    }
+
     public Atributo(String nome, double porcetnBonus, int nivel) {
         this.nome = nome;
         this.porcetnBonus = porcetnBonus;
