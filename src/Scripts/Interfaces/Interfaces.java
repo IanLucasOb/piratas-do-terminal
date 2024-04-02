@@ -1,8 +1,7 @@
 package Scripts.Interfaces;
 
 import java.io.IOException;
-import Scripts.Ataque.*;
-import Scripts.ListaSimples.ListaSimples;
+import Scripts.ListaSimples.*;
 import Scripts.ListaSimples.No;
 
 public class Interfaces {

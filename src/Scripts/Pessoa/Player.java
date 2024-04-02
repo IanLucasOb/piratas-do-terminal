@@ -1,9 +1,8 @@
 package Scripts.Pessoa;
 
 import Scripts.Item.*;
-import Scripts.ListaSimples.Dado;
+import Scripts.ListaSimples.*;
 import Scripts.ListaSimples.ListaSimples;
-import Scripts.ListaSimples.No;
 import Scripts.Ataque.*;
 import Scripts.Atributo.*;
 

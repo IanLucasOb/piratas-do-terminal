@@ -1,8 +1,5 @@
 package Scripts.ListaSimples;
 
-import Scripts.Atributo.*;
-import Scripts.Ataque.Ataque;
-
 public class ListaSimples {
 	private No prim;
 	private No ult;

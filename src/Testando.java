@@ -1,10 +1,9 @@
 import java.io.IOException;
 
-import Scripts.Ataque.Ataque;
-import Scripts.Atributo.Atributo;
+import Scripts.Ataque.*;
+import Scripts.Atributo.*;
 import Scripts.Interfaces.*;
 import Scripts.Pessoa.*;
-import Scripts.ListaSimples.Dado;
 import Scripts.ListaSimples.*;
 
 public class Testando {
