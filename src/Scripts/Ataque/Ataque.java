@@ -11,6 +11,13 @@ public class Ataque {
     /*
      * CONSTRUTOR
      */
+    public Ataque(String nome, Atributo atributo) {
+        this.nome = nome;
+        this.dano = 1;
+        this.atributoRelacion = atributo;
+    }
+
+
     public Ataque(String nome, int dano, Atributo atributo) {
         this.nome = nome;
         this.dano = dano;

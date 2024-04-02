@@ -1,6 +1,9 @@
 package Scripts.Interfaces;
 
 import java.io.IOException;
+import Scripts.Ataque.*;
+import Scripts.ListaSimples.ListaSimples;
+import Scripts.ListaSimples.No;
 
 public class Interfaces {
     private boolean batalha = false;
@@ -13,7 +16,6 @@ public class Interfaces {
      * CONSTRUTOR
      */
     public Interfaces() {
-        this.menu();
     }
 
     /*
@@ -89,21 +91,24 @@ public class Interfaces {
     }
 
 
-    public void opcoesBatalha(String[] nomeOpcoes){
+    public void opcoesBatalha(ListaSimples listaAtaques){
         int cont = 0;
-        String[] listaTemp = new String[nomeOpcoes.length];
+        No atual = listaAtaques.getPrim();
+
+        String[] text = new String[listaAtaques.getQuantNos()];
 
         this.titulo("Ataques");
-        for (int i = 0; i < nomeOpcoes.length; i++) {
+        for (int i = 0; atual != null; i++) {
             cont++;
-            listaTemp[i] = "[ " + (i + 1) + " ] - " + nomeOpcoes[i];
+            text[i] = "[ " + (i + 1) + " ] - " + atual.getInfo().getAtaque().getNome();
             
             if (cont == 2) {
-                System.out.println(listaTemp[i - 1]
-                                    + this.centralizaTexto(listaTemp[i - 1].length(), "|       ", true, false) 
-                                    + listaTemp[i]);
+                System.out.println(text[i - 1]
+                                    + this.centralizaTexto(text[i - 1].length(), "|       ", true, false) 
+                                    + text[i]);
                 cont = 0;
             }
+            atual = atual.getProx();
         }
 
         this.linha();

@@ -1,6 +1,7 @@
 package Scripts.ListaSimples;
 
-import Scripts.ListaSimples.*;
+import Scripts.Atributo.*;
+import Scripts.Ataque.Ataque;
 
 public class ListaSimples {
 	private No prim;
@@ -44,6 +45,7 @@ public class ListaSimples {
 		this.ult = novoNo;
 		this.quantNos++;
 	}
+	
 	//retorna o endere�o do n� que est� contendo o valor a ser procurado.
 	public No pesquisarNo (int chave){
 		No atual = this.prim;
@@ -121,9 +123,22 @@ public class ListaSimples {
 		String msg = "";
 		No atual = this.prim;
 		while (atual != null){
-			msg += atual.getInfo().getChave()+"\n";
+			msg += atual.getInfo().getAtaque().getNome()+"\n";
 			atual = atual.getProx();
 		}
+		return msg;
+	}
+
+
+	public String[] toText(ListaSimples nomesAtaques){
+		String msg[] = new String[nomesAtaques.getQuantNos()];
+		No atual = nomesAtaques.getPrim();
+
+		for (int i = 0; atual != null; i++){
+			msg[i] = atual.getInfo().getAtaque().getNome();
+			atual = atual.getProx();
+		}
+
 		return msg;
 	}
 }

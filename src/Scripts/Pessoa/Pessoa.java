@@ -10,10 +10,10 @@ public class Pessoa {
     /*
      * CONSTRUTOR
     */
-    public Pessoa(String nome, String ilhaNatal, int vida, int maxVida) {
+    public Pessoa(String nome, String ilhaNatal, int maxVida) {
         this.nome = nome;
         this.ilhaNatal = ilhaNatal;
-        this.vida = vida; // Não precisa ser passado no método construtor
+        this.vida = maxVida; // Não precisa ser passado no método construtor
         this.maxVida = maxVida; // automaticamente será a vida atual quando o personagem for instanciado
     }
 
