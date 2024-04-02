@@ -64,6 +64,7 @@ public class Item {
 		else
 		{
 			// GERAR ALEATORIAMENTE UM VALOR DE DURABILIDADE
+			
 		}
 	}
 	
