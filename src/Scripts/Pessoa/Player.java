@@ -1,8 +1,11 @@
 package Scripts.Pessoa;
 
 import Scripts.Item.*;
+import Scripts.ListaSimples.Dado;
+import Scripts.ListaSimples.ListaSimples;
+import Scripts.Ataque.*;
 import Scripts.Atributo.*;
-import Scripts.Bando.*;
+
 
 public class Player extends Pessoa {
 	/*
@@ -21,18 +24,24 @@ public class Player extends Pessoa {
 	private double pesoMax; // falta
 
 	private Faccao classePlayer; // falta
+	private ListaSimples listaAtaques = new ListaSimples();
 
 	/*
 	 * CONSTRUTOR
 	 */
 	public Player(String nome, String ilhaNatal, int vida, int maxVida, Faccao classePlayer, String nomeBando, String nomeAtributoPrincipal) {
 		super(nome, ilhaNatal, vida, maxVida);
+		
 		this.inventario = new Item[5];
 		this.nivel = 0;
+		
 		this.bandoAssociado.setNomeBando(nomeBando);
 		this.atributos = new Atributo[8];
+		
 		this.atributoPrincipal.setNome(nomeAtributoPrincipal);
 		this.classePlayer = classePlayer;
+
+		this.listaAtaques.inserirUltimo(new Dado(new Ataque("Ataque Simples", 1, new Atributo("Dano"))));
 	}
 
 	/*

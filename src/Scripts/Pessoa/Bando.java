@@ -1,6 +1,5 @@
-package Scripts.Bando;
+package Scripts.Pessoa;
 
-import Scripts.Pessoa.*;
 import Scripts.Atributo.*;
 
 public class Bando {

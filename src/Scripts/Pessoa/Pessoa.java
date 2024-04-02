@@ -3,6 +3,7 @@ package Scripts.Pessoa;
 public class Pessoa {
     private String nome;
     private String ilhaNatal;
+    
     private int vida;
 	private int maxVida;
 
