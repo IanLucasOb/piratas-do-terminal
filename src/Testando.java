@@ -3,8 +3,8 @@ import java.io.IOException;
 import Scripts.Ataque.*;
 import Scripts.Atributo.*;
 import Scripts.Interfaces.*;
+import Scripts.ListaDupla.*;
 import Scripts.Pessoa.*;
-import Scripts.ListaSimples.*;
 
 
 // só testando merge

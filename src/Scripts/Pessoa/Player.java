@@ -1,8 +1,7 @@
 package Scripts.Pessoa;
 
 import Scripts.Item.*;
-import Scripts.ListaSimples.*;
-import Scripts.ListaSimples.ListaSimples;
+import Scripts.ListaDupla.*;
 import Scripts.Ataque.*;
 import Scripts.Atributo.*;
 
@@ -24,7 +23,7 @@ public class Player extends Pessoa {
 	private double pesoMax; // falta
 
 	private Faccao classePlayer; // falta
-	private ListaSimples listaAtaques;
+	private ListaDupla listaAtaques;
 
 	/*
 	 * CONSTRUTOR
@@ -41,7 +40,7 @@ public class Player extends Pessoa {
 		this.atributoPrincipal = new Atributo(nomeAtributoPrincipal);
 		this.classePlayer = classePlayer;
 
-		this.listaAtaques = new ListaSimples();
+		this.listaAtaques = new ListaDupla();
 		this.listaAtaques.inserirUltimo(new Dado(new Ataque("Ataque Simples", 1, new Atributo("Dano"))));
 	}
 
@@ -149,7 +148,7 @@ public class Player extends Pessoa {
 	}
 
 
-	public ListaSimples getListaAtaques() {
+	public ListaDupla getListaAtaques() {
 		return listaAtaques;
 	}
 	public void setListaAtaques(Dado elem) {

@@ -1,4 +1,4 @@
-package Scripts.ListaSimples;
+package Scripts.ListaDupla;
 
 import Scripts.Ataque.Ataque;
 

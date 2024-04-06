@@ -1,8 +1,8 @@
 package Scripts.Interfaces;
 
 import java.io.IOException;
-import Scripts.ListaSimples.*;
-import Scripts.ListaSimples.No;
+
+import Scripts.ListaDupla.*;
 
 public class Interfaces {
     private boolean batalha = false;
@@ -90,7 +90,7 @@ public class Interfaces {
     }
 
 
-    public void opcoesBatalha(ListaSimples listaAtaques){
+    public void opcoesBatalha(ListaDupla listaAtaques){
         int cont = 0;
         No atual = listaAtaques.getPrim();
 
