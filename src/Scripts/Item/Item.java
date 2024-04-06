@@ -59,11 +59,21 @@ public class Item {
 	{
 		if (!random)
 		{
+			/*
+			 * DURABILIDADE DE ITENS POSSUI UM RANGE ENTRE 0 E 100
+			 */
 			this.durabilidadeAtual = this.durabilidadeMax;
 		}
 		else
 		{
 			// GERAR ALEATORIAMENTE UM VALOR DE DURABILIDADE
+			do
+			{
+				// Pegar numero aleatório para ser a durabilidade do item
+				this.durabilidadeAtual = (float)Math.random() * this.durabilidadeMax;
+			} 
+			// Esse while evitará que a durabilidade se mantenha extremamente baixa
+			while (this.durabilidadeAtual <= 20);
 			
 		}
 	}
