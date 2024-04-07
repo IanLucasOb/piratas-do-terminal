@@ -1,6 +1,7 @@
 package Scripts.Barco;
 
 import Scripts.Item.Item;
+import Scripts.Ilha.Ilha;
 
 public class Barco {
 	
@@ -16,6 +17,8 @@ public class Barco {
 	private float durabilidadeAtual;
 	private float durabilidadeMax;
 
+	private Ilha ilhaAtracada;
+
 	/*
 	 * CONSTRUTOR
 	 */
@@ -30,6 +33,33 @@ public class Barco {
 		this.durabilidadeAtual = durabilidadeMax;
 		this.durabilidadeMax = durabilidadeMax;
 	}
+
+	/*
+	 * MÉTODOS
+	 */
+	public void TakeDamage(float damage)
+	{
+		// Tomar dano baseado no ataque feito
+		durabilidadeAtual -= damage;
+
+		// Verificar se o barco foi destruido
+		if (durabilidadeAtual <= 0)
+		{
+			
+		}
+	}
+
+	public void IrAltoMar()
+	{
+		// Alternar a ilha atracada para nula
+		this.setIlhaAtracada(null);
+	}
+
+	public void MoverBarco(Ilha novaIlha)
+	{
+		
+	}
+
 
 	/*
 	 * GETTERS E SETTERS
@@ -80,5 +110,13 @@ public class Barco {
 
 	public void setDurabilidadeMax(float durabilidadeMax) {
 		this.durabilidadeMax = durabilidadeMax;
-	}	
+	}
+
+	public Ilha getIlhaAtracada() {
+		return ilhaAtracada;
+	}
+
+	public void setIlhaAtracada(Ilha ilhaAtracada) {
+		this.ilhaAtracada = ilhaAtracada;
+	}
 }
