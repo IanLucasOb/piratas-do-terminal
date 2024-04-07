@@ -5,40 +5,75 @@ import Scripts.Atributo.*;
 import Scripts.Interfaces.*;
 import Scripts.ListaDupla.*;
 import Scripts.Pessoa.*;
-
-
-// só testando merge
-// testando mais um pouco
-
-
+import java.util.Scanner;
 
 // outro teste
 public class Testando {
     public static void main(String [] args) throws IOException, InterruptedException {
+        Scanner input = new Scanner(System.in);
         Interfaces teste = new Interfaces();
-        Player jogador1 = new Player("Thiago", "None", 50, (new Faccao("Velocidade", 0)), "None", "Dano");
-
-        String ataques[] = {"Ataq", "Ataques 2", "Voadora", "Martelada", "Atirar"};
-        String atributosAtaques[] = {"Dano", "Agilidade", "Dano", "Defesa", "Mira"};
         
-        int cont = 0;
-        while (cont != 5) {
-            jogador1.setListaAtaques(new Dado(new Ataque(ataques[cont], new Atributo(atributosAtaques[cont]))));
-            cont++;
-        }
+        String funcoes[] = {"Menu", "Menu Padrões", "Menu Defesas", "Menu Ataques", "Créditos"};
+        boolean continuar = true;
 
-        jogador1.getListaAtaques().toString();
+        do {
+            teste.moldeOpcoes("Menu Personalizado", funcoes);
+            System.out.print("Digite sua Escolha: ");
+            
+            int opcoes = input.nextInt();
+            teste.linha();
 
-        teste.opcoesBatalha(jogador1.getListaAtaques());
-        // teste.delay();
-        
-        teste.opcoesBatalhaPadrao();
-        // teste.delay();
+            switch (opcoes) {
+                case 1:
+                    teste.menu();
+                    break;
 
-        teste.creditos();
-        // teste.delay();
+                case 2:
+                    String opcoesPadrao[] = {"Ataque", "Defesa", "Inventário", "Fugir"};
+                    teste.moldeOpcoes("Escolhas", opcoesPadrao);
 
-        teste.menu();
-        // teste.delay();
+                    break;
+
+                case 3:
+                    String defesa[] = {"Esquiva", "Escudo"};
+                    teste.moldeOpcoes("Defesas", defesa);
+                    
+                    break;
+
+                case 4:
+                    Player jogador1 = new Player("Thiago", null, 50, (new Faccao("Assassino", 0)), null, "Dano");
+                    int cont = 0;
+            
+                    String ataques[] = {"Ataq", "Ataques 2", "Voadora", "Martelada", "Atirar"};
+                    String atributosAtaques[] = {"Dano", "Agilidade", "Dano", "Defesa", "Mira"};
+            
+                    while (cont != 5) {
+                        jogador1.setListaAtaques(new Dado(new Ataque(ataques[cont], new Atributo(atributosAtaques[cont]))));
+                        cont++;
+                    }
+            
+                    teste.moldeOpcoes("Ataques", jogador1.getListaAtaques().toSimpleList());
+                    break;
+
+                case 5:
+                    teste.creditos();
+                    break;
+
+                default:
+                    continuar = false;
+                    break;
+            }
+
+            System.out.print("Aperte qualquer tecla para continuar...");
+            try {
+                System.in.read();
+            }  
+            catch(Exception e) {}  
+
+            teste.limparTerminal();
+
+        } while (continuar); 
+            
+        input.close();
     }
 }

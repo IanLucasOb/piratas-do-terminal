@@ -111,9 +111,23 @@ public class ListaDupla {
 		String msg="";
 		No atual = this.prim;
 		while (atual != null){
-			msg += atual.getInfo().getChave()+"\n";
+			msg += atual.getInfo().getChave() + " ";
 			atual = atual.getProx();
 		}
+		return msg;
+	}
+
+
+
+	public String[] toSimpleList(){
+		String msg[] = new String[this.getQuantNos()];
+		No atual = this.prim;
+
+		for (int i = 0; atual != null; i++){
+			msg[i] = atual.getInfo().getAtaque().getNome();
+			atual = atual.getProx();
+		}
+
 		return msg;
 	}
 }

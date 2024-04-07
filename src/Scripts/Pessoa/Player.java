@@ -24,6 +24,7 @@ public class Player extends Pessoa {
 
 	private Faccao classePlayer; // falta
 	private ListaDupla listaAtaques;
+	private ListaDupla listaDefesa;
 
 	/*
 	 * CONSTRUTOR
@@ -79,7 +80,7 @@ public class Player extends Pessoa {
 	public Item getItemEquipado() {
 		return itemEquipado;
 	}
-	public void setItemEquipado(Item itemEquipado) {
+		public void setItemEquipado(Item itemEquipado) {
 		this.itemEquipado = itemEquipado;
 	}
 
