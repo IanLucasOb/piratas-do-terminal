@@ -1,8 +1,7 @@
 package Scripts.Interfaces;
 
 import java.io.IOException;
-import Scripts.ListaSimples.*;
-import Scripts.ListaSimples.No;
+
 
 public class Interfaces {
     private boolean batalha = false;
@@ -24,6 +23,8 @@ public class Interfaces {
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     }
 
+
+    // Centraliza o Texto com um tamanho padrão
     public void centralizaTexto(String msg) {
         int tamanhoMsg = msg.length();
         int inicio = (57 / 2) - (tamanhoMsg / 2);
@@ -35,6 +36,7 @@ public class Interfaces {
     }
 
 
+    // Centraliza o texto de acordo com o argumentos passados
     public String centralizaTexto(int tamanahoEspaco, String msg, boolean quebraLinha, boolean printarMsg) {
         int tamanhoMsg = msg.length();
         int inicio = (57/2 - tamanahoEspaco) - (tamanhoMsg / 2) + 3;
@@ -44,23 +46,20 @@ public class Interfaces {
             for (int i = 0; i < inicio; i++) {
                 System.out.print(" ");
             }
-    
             if (quebraLinha) {
                 System.out.print(msg + "\n");
             }
-
         } else {
             for (int i = 0; i < inicio; i++) {
                 textoFinal += " ";
             }
             textoFinal += msg;
-
         }   
-
         return textoFinal;
     }
 
 
+    // Faz uma formatação do título como um cabeçalho
     public void titulo(String msg) {
         this.linha();
         this.centralizaTexto(msg);
@@ -68,6 +67,7 @@ public class Interfaces {
     }
 
 
+    // Printa o menu
     public void menu() {
         this.titulo("Menu");
         System.out.println(   "  [ 0 ] - Sair" 
@@ -78,6 +78,7 @@ public class Interfaces {
     }
 
 
+    // Printa os Créditos do Jogo
     public void creditos() {
         System.out.println(   "Créditos:");
 
@@ -90,41 +91,34 @@ public class Interfaces {
     }
 
 
-    public void opcoesBatalha(ListaSimples listaAtaques){
+    // Código recursivo para opções
+    public void moldeOpcoes(String nome, String[] lista){
         int cont = 0;
-        No atual = listaAtaques.getPrim();
+        String[] text = new String[lista.length];
 
-        String[] text = new String[listaAtaques.getQuantNos()];
-
-        this.titulo("Ataques");
-        for (int i = 0; atual != null; i++) {
+        this.titulo(nome);
+        for (int i = 0; i < lista.length; i++) {
             cont++;
-            text[i] = "[ " + (i + 1) + " ] - " + atual.getInfo().getAtaque().getNome();
+            text[i] = "[ " + (i + 1) + " ] - " + lista[i];
             
             if (cont == 2) {
                 System.out.println(text[i - 1]
                                     + this.centralizaTexto(text[i - 1].length(), "|       ", true, false) 
                                     + text[i]);
                 cont = 0;
+            } 
+
+            if (i == lista.length - 1) {
+                System.out.println(text[i]);
             }
-            atual = atual.getProx();
         }
-
         this.linha();
     }
 
 
-    public void opcoesBatalhaPadrao() {
-        this.titulo("Escolhas");
-        System.out.println(   "  [ 1 ] - Ataque           |       [ 2 ] - Defesa" +
-                            "\n  [ 3 ] - Iventário        |       [ 4 ] - Fugir");
-        this.linha();
-    }
-
-
+    // Delay no Terminal de 1 segundo
     public void delay() {
         try {
-            // Tempo de 1 segundo;
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -138,7 +132,7 @@ public class Interfaces {
         if (System.getProperty("os.name").contains("Windows")) {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } else {
-            Runtime.getRuntime().exec("clear"); // Resto do código, porém o VS estava reclamando
+            Runtime.getRuntime(); //.exec("clear"); // Resto do código, porém o VS estava reclamando
         }
     }
 
