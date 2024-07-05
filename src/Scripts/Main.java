@@ -2,28 +2,29 @@ package Scripts;
 
 import java.io.IOException;
 
-import Scripts.Ataque.*;
-import Scripts.Atributo.*;
-import Scripts.Interfaces.*;
-import Scripts.ListaDupla.*;
-import Scripts.Pessoa.*;
+import Scripts.Interfaces.Creditos;
+import Scripts.Interfaces.Formatacao;
 
 // outro teste
 public class Main {
     public static void main(String [] args) throws IOException, InterruptedException {
-        Interfaces teste = new Interfaces();
+        Creditos menuCreditos = new Creditos();
+        Formatacao format = new Formatacao();
         
+        int foda = 3;
         boolean continuar = true;
 
         do {
-            int foda = teste.menu();
+        	// com erro
+            // int foda = teste.menu();
 
             switch (foda)
             {
                 case 0:
 
                     // Finalizar Scanners
-                    teste.Finalizar();
+                	// com erro
+                    // teste.Finalizar();
 
                     // Finalizar continuação do programa
                     continuar = false;
@@ -37,13 +38,13 @@ public class Main {
                 case 3:
                     
                     // Mostrar créditos
-                    teste.creditos();
+                    menuCreditos.creditos();
 
                     break;
             }
 
             // Limpar tela do terminal
-            teste.limparTerminal();
+            format.limparTerminal();
 
         } while (continuar);
     }
